@@ -8,9 +8,6 @@ export type PermissionDocument = mongoose.Document & {
   isGroup: boolean;
   name: string;
   validSubtypes?: string[];
-  methods?: string[];
-  endpoints?: string[];
-  permissionLevel?: number;
   children?: string[];
 }
 
@@ -25,18 +22,6 @@ const PermissionSchema = new mongoose.Schema(
       required: true,
       unique: true,
       index: true
-    },
-    validSubtypes: {
-      type: Array,
-      required: false
-    },
-    methods: {
-      type: Array,
-      required: false
-    },
-    endpoints: {
-      type: Array,
-      required: false
     },
     permissionLevel: {
       type: Number,

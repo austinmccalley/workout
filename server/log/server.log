@@ -1,0 +1,19 @@
+{
+  "isRequest": true,
+  "label": "API",
+  "hash": "16bd6",
+  "method": "POST",
+  "url": "/auth/signup"
+},
+{
+  "isResponse": true,
+  "label": "API",
+  "hash": "16bd6",
+  "status": 500,
+  "length": 428,
+  "type": "application/json",
+  "requestTime": 59.5,
+  "errorInfo": {
+    "stack": "ValidationError: User validation failed: password: Password must contain an uppercase, lowercase, and a digit and be atleast 8 characters.\n    at model.Document.invalidate (C:\\Users\\mrmca\\Documents\\code\\portfolio\\workout\\server\\node_modules\\.pnpm\\mongoose@5.9.23_mongoose@5.9.23\\node_modules\\mongoose\\lib\\document.js:2575:32)\n    at C:\\Users\\mrmca\\Documents\\code\\portfolio\\workout\\server\\node_modules\\.pnpm\\mongoose@5.9.23_mongoose@5.9.23\\node_modules\\mongoose\\lib\\document.js:2395:17\n    at C:\\Users\\mrmca\\Documents\\code\\portfolio\\workout\\server\\node_modules\\.pnpm\\mongoose@5.9.23_mongoose@5.9.23\\node_modules\\mongoose\\lib\\schematype.js:1213:9\n    at processTicksAndRejections (internal/process/task_queues.js:79:11)"
+  }
+},

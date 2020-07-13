@@ -21,19 +21,17 @@ interface DeletePermissionReturn {
 }
 
 export default {
-  async create({ isGroup, name, validSubtypes, methods, endpoints, permissionLevel, children }): Promise<string> {
+  async create({ isGroup, name, permissionLevel, children }): Promise<string> {
 
     // Check for all paremeters
-    BadRequest.assert((isGroup !== undefined) && name && validSubtypes
-      && methods && endpoints && permissionLevel
+    BadRequest.assert((isGroup !== undefined) && name && permissionLevel
       && children,
     'Please provide all parts of the permission body')
 
     // Check types
     NotAcceptable.assert(
       isValidPermissionBody(
-        isGroup, name, validSubtypes,
-        methods, endpoints, permissionLevel,
+        isGroup, name, permissionLevel,
         children),
       'This permission was misconstructed and cannot be made')
 
@@ -45,7 +43,7 @@ export default {
     Conflict.assert(!checkPerm, 'A permission with that name already exists')
 
     // Create the permission
-    const permission = await Permission.create({ isGroup, name, validSubtypes, methods, endpoints, permissionLevel, children })
+    const permission = await Permission.create({ isGroup, name, permissionLevel, children })
 
     return permission.name
   },
@@ -96,7 +94,7 @@ export default {
     return { user }
   },
   async get({ permissionName }): Promise<PermissionDocument> {
-    
+
     // Check for all paremeters
     BadRequest.assert(permissionName, 'Please include the name of the permission to look for')
 
@@ -111,7 +109,7 @@ export default {
     return permission
   },
   async delete({ permissionName }): Promise<DeletePermissionReturn> {
-    
+
     // Check for all paremeters
     BadRequest.assert(permissionName, 'Please include the name of the permission to look for')
 
@@ -121,7 +119,7 @@ export default {
     permissionName = permissionName.toUpperCase()
 
     const permission = await Permission.deleteOne({ name: permissionName })
-    
+
     return permission
   }
 

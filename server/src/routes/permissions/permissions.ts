@@ -9,7 +9,6 @@ const router = new KoaRouter()
 
 /* 
   NOTE: Should we make this handle all permission and creation or no?
-
 */
 
 const cookieConfig = {

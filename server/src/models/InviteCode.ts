@@ -7,7 +7,6 @@ export type InviteCodeDocument = mongoose.Document & {
   inviteCode: string,
   referer?: mongoose.Schema.Types.ObjectId;
   permissionGroup: string;
-  permissionType: string;
   used?: boolean;
 }
 
@@ -26,14 +25,6 @@ const InviteCodeSchema = new mongoose.Schema(
       default: 'DEFAULT',
       validate: [
         isPermissionGroup,
-        'The permission level must be one of the enum keys'
-      ],
-    },
-    permissionType: {
-      type: String,
-      default: 'DEFAULT',
-      validate: [
-        isPermissionType,
         'The permission level must be one of the enum keys'
       ],
     },

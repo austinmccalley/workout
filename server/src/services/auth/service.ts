@@ -37,7 +37,6 @@ export default {
       id: user._id,
       username,
       permissionGroup: user.group,
-      permissionType: user.type
     })
   },
 
@@ -71,15 +70,13 @@ export default {
 
     // Get the permission that is granted
     const group = invite.permissionGroup
-    const type = invite.permissionType
 
     // Create the user
-    const user = await User.create({ firstName, lastName, username, password, email, phone, group, type })
+    const user = await User.create({ firstName, lastName, username, password, email, phone, group })
     return objectToToken({
       id: user._id,
       username,
       permissionGroup: user.group,
-      permissionType: user.type
     })
   },
 }

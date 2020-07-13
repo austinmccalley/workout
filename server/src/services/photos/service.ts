@@ -1,5 +1,4 @@
 import path from 'path'
-import Jimp from 'jimp'
 import sharp from 'sharp'
 import { NotAcceptable, BadRequest, NotFound } from 'fejl'
 import randomWords from 'random-words';

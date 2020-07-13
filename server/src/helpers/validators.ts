@@ -33,14 +33,11 @@ function isValidPhotoRequestBody(name, size): boolean {
 }
 
 // FUTURE: This is aids and needs to be fixed
-function isValidPermissionBody(isGroup, name, subTypes, methods, endpoints, permissionLevel, children ): boolean {
+function isValidPermissionBody(isGroup, name, permissionLevel, children ): boolean {
   if (typeof isGroup !== 'boolean') return false
   if (typeof name !== 'string') return false
-  if (!Array.isArray(subTypes)) return false;
-  if (!Array.isArray(methods)) return false;
-  if (!Array.isArray(endpoints)) return false;
   if (typeof permissionLevel !== 'number') return false; // BUG: Reads as not a number if permissionLevel = 0
-  if (!Array.isArray(children)) return false;
+  if (!Array.isArray(children)) return false
 
   return true
 }

@@ -3,7 +3,7 @@
 import mongoose from 'mongoose'
 import bcrypt from 'bcrypt'
 
-import { isPermissionGroup, isPermissionType } from '@helpers/validators'
+import { isPermissionGroup } from '@helpers/validators'
 import { PERMISSIONS } from '@constants'
 
 function validateLocalStrategyProperty(property): number {
@@ -30,7 +30,6 @@ export type UserDocument = mongoose.Document & {
   phone: string;
   password: string;
   group?: string;
-  type: string;
   archived?: boolean
 }
 
@@ -88,13 +87,6 @@ const UserSchema = new mongoose.Schema(
         isPermissionGroup,
         'Permission group must exist'
       ],
-    },
-    type: {
-      type: String,
-      validate: [
-        isPermissionType,
-        'Permission type must exist'
-      ]
     },
     archived: Boolean,
   },
