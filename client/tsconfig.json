@@ -20,5 +20,6 @@
       "app/*": ["./app/*"]
     }
   },
+  "include": ["src/", "types/global.d.ts"],
   "exclude": ["dist", "build", "node_modules"]
 }

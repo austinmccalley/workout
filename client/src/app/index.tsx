@@ -1,14 +1,16 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader/root';
-import { Router, Route, Switch } from 'react-router';
-import { TodoContainer } from 'app/containers/TodoContainer';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HomeContainer } from 'app/containers/HomeContainer';
+
+import './index.css';
 
 // render react DOM
 export const App = hot(({ history }) => {
   return (
     <Router history={history}>
       <Switch>
-        <Route path="/" component={TodoContainer} />
+        <Route path="/" component={HomeContainer} />
       </Switch>
     </Router>
   );

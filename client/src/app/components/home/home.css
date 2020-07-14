@@ -1,0 +1,35 @@
+.content {
+  padding: 0;
+  margin: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.buttons {
+  padding-top: 2em;
+  flex-direction: row;
+}
+
+.button {
+  background-color: #FF7A63;
+  border: none;
+  color: #ffffff;
+  padding: 0.8em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.25em 0.2em;
+  font-size: 1.563em;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: -3px 4px #37392E;
+  margin: 0.5em;
+}
+
+.buttons a {
+  text-decoration: none;
+  color: #ffffff;
+}
